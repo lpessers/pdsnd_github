@@ -174,8 +174,8 @@ def rawdata(df):
     start = 0
     end = 5
 
-    request_raw = input('Do you want to see the raw data? Enter yes or no.\n').lower()
-    if request_raw == 'yes':
+    initiate_raw = input('Do you want to see the raw data? Enter yes or no.\n').lower()
+    if initiate_raw == 'yes':
         while end <= df.shape[0] - 1:
 
             print(df.iloc[start:end,:])
