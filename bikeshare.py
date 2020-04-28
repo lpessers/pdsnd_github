@@ -170,6 +170,13 @@ def user_stats(df):
 
 
 def main():
+<<<<<<< Updated upstream
+||||||| merged common ancestors
+    print('-'*40 + '\n')
+=======
+    print('-'*40 + '\n')
+    print(" o__         __o        ,__o        __o           __o\n ,>/_       -\<,      _-\_<,       _`\<,_       _ \<_\n(*)`(*).....O/ O.....(*)/'(*).....(*)/ (*).....(_)/(_)")
+>>>>>>> Stashed changes
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
