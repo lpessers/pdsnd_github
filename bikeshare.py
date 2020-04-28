@@ -166,17 +166,30 @@ def user_stats(df):
         print("The oldest user was born in {}.\nThe youngest user was born in in {}.\nThe most common year of birth among users is {}.".format(oldest_by, youngest_by, most_common_by))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*40 + '\n')
 
+def rawdata(df):
+    """Shows raw data on request."""
+
+    start = 0
+    end = 5
+
+    initiate_raw = input('Do you want to see the raw data? Enter yes or no.\n').lower()
+    if initiate_raw == 'yes':
+        while end <= df.shape[0] - 1:
+
+            print(df.iloc[start:end,:])
+            start += 5
+            end += 5
+
+            continue_raw = input('Do you want to see more raw data? Enter yes or no.\n').lower()
+            if continue_raw == 'no':
+                print('-'*40)
+                break
 
 def main():
-<<<<<<< Updated upstream
-||||||| merged common ancestors
-    print('-'*40 + '\n')
-=======
     print('-'*40 + '\n')
     print(" o__         __o        ,__o        __o           __o\n ,>/_       -\<,      _-\_<,       _`\<,_       _ \<_\n(*)`(*).....O/ O.....(*)/'(*).....(*)/ (*).....(_)/(_)")
->>>>>>> Stashed changes
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
@@ -185,6 +198,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+        rawdata(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
